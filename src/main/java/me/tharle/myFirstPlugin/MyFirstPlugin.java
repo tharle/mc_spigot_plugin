@@ -15,6 +15,7 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
 
         // Register all events
         getServer().getPluginManager().registerEvents(this, this);
+        getServer().getPluginManager().registerEvents(new ShearListenner(), this);
     }
 
     @Override
