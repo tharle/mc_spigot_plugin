@@ -5,3 +5,7 @@ api-version: '1.21'
 authors: [ Tharle ]
 description: Tutorial Spigot puglin MC
 website: tharle.ca
+commands:
+  die:
+    description: You kill other players or yourself
+    usage: /<command>

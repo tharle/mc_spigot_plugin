@@ -1,5 +1,10 @@
 package me.tharle.myFirstPlugin;
 
+import org.bukkit.ChatColor;
+import org.bukkit.command.BlockCommandSender;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -33,5 +38,25 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
     public void onLeaveBed(PlayerBedLeaveEvent event) {
         Player player = event.getPlayer();
         player.sendMessage("GOOD MORNING!! ");
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        // /die kill the player
+
+        if(command.getName().equalsIgnoreCase("die")) {
+            if(sender instanceof Player player){
+                player.setHealth(0);
+                player.sendMessage(ChatColor.RED + "" + ChatColor.ITALIC + "You have opted to die!!");
+
+                return true;
+            } else if(sender instanceof ConsoleCommandSender){
+                getLogger().info("Command send for CONSOLE commander sender");
+            } else if(sender instanceof BlockCommandSender){
+                getLogger().info("Command send for BLOCK commander sender");
+            }
+        }
+
+        return super.onCommand(sender, command, label, args);
     }
 }
