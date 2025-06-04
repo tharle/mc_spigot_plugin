@@ -1,0 +1,7 @@
+name: MyFirstPlugin
+version: '1.0-SNAPSHOT'
+main: me.tharle.myFirstPlugin.MyFirstPlugin
+api-version: '1.21'
+authors: [ Tharle ]
+description: Tutorial Spigot puglin MC
+website: tharle.ca
