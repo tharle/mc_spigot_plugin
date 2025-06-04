@@ -6,12 +6,12 @@ public final class MyFirstPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        getLogger().info("ON ENABLE CUSTOM PLUGIN");
 
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        getLogger().info("ON DISABLE CUSTOM PLUGIN");
     }
 }
