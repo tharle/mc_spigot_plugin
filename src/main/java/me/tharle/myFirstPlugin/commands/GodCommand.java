@@ -19,6 +19,8 @@ public class GodCommand implements CommandExecutor {
                     + "God mode "
                     + (player.isInvulnerable()? "enabled" : "disabled"));
 
+        } else {
+            commandSender.sendMessage(ChatColor.RED + ""+ ChatColor.ITALIC + "You need a player for this command.");
         }
 
 

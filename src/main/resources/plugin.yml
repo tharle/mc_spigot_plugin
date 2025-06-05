@@ -12,3 +12,6 @@ commands:
   god:
     description: Turn on or off the invulnerability
     usage: /<command>
+    aliases:
+      - deus
+      - dieux
