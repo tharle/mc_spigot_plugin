@@ -15,3 +15,9 @@ commands:
     aliases:
       - deus
       - dieux
+  feed:
+    description: Feed the player
+    usage: /<command>
+  hungry:
+    description: let the player a little more hungry
+    usage: /<command>

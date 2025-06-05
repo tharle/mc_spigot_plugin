@@ -1,6 +1,8 @@
 package me.tharle.myFirstPlugin;
 
+import me.tharle.myFirstPlugin.commands.FeedCommand;
 import me.tharle.myFirstPlugin.commands.GodCommand;
+import me.tharle.myFirstPlugin.commands.HungryCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.Command;
@@ -25,6 +27,8 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
 
         // Register all commands
         getCommand("god").setExecutor(new GodCommand());
+        getCommand("feed").setExecutor(new FeedCommand());
+        getCommand("hungry").setExecutor(new HungryCommand());
     }
 
     @Override
