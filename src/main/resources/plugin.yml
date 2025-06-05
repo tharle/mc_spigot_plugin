@@ -9,3 +9,6 @@ commands:
   die:
     description: You kill other players or yourself
     usage: /<command>
+  god:
+    description: Turn on or off the invulnerability
+    usage: /<command>
