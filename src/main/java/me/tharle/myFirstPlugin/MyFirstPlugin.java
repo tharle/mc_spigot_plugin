@@ -3,6 +3,7 @@ package me.tharle.myFirstPlugin;
 import me.tharle.myFirstPlugin.commands.FeedCommand;
 import me.tharle.myFirstPlugin.commands.GodCommand;
 import me.tharle.myFirstPlugin.commands.HungryCommand;
+import me.tharle.myFirstPlugin.commands.KillCommand;
 import me.tharle.myFirstPlugin.listenners.DeadListenner;
 import me.tharle.myFirstPlugin.listenners.ShearListenner;
 import org.bukkit.ChatColor;
@@ -32,6 +33,7 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
         getCommand("god").setExecutor(new GodCommand());
         getCommand("feed").setExecutor(new FeedCommand());
         getCommand("hungry").setExecutor(new HungryCommand());
+        getCommand("Kill").setExecutor(new KillCommand());
     }
 
     @Override

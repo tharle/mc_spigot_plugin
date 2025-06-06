@@ -21,3 +21,6 @@ commands:
   hungry:
     description: let the player a little more hungry
     usage: /<command>
+  kill:
+    description: kill some player by name
+    usage: /<command> <arg>
