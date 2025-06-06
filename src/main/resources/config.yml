@@ -1,0 +1,6 @@
+rejoin-message: '&aWelcome back to the server &c&l%player_name%&a! Have a great day honey!'
+count: 21
+explode: false
+favorite-foods:
+  - 'apple'
+  - 'cake'

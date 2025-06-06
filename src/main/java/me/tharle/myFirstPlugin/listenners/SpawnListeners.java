@@ -1,6 +1,7 @@
 package me.tharle.myFirstPlugin.listenners;
 
 import me.tharle.myFirstPlugin.MyFirstPlugin;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -25,7 +26,12 @@ public class SpawnListeners implements Listener {
 
             event.getPlayer().teleport(location);
         } else {
-            event.setJoinMessage("Welcome back to the server "+event.getPlayer().getName()+"! You know how the thing are!");
+            // Get the config  value message thing
+            String rejoinMessage = plugin.getConfig().getString("rejoin-message");
+
+            if(rejoinMessage == null) rejoinMessage = "Welcome back.";
+            rejoinMessage = rejoinMessage.replace("%player_name%", event.getPlayer().getDisplayName());
+            event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', rejoinMessage));
         }
     }
 
