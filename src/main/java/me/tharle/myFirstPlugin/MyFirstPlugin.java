@@ -1,11 +1,9 @@
 package me.tharle.myFirstPlugin;
 
-import me.tharle.myFirstPlugin.commands.FeedCommand;
-import me.tharle.myFirstPlugin.commands.GodCommand;
-import me.tharle.myFirstPlugin.commands.HungryCommand;
-import me.tharle.myFirstPlugin.commands.KillCommand;
+import me.tharle.myFirstPlugin.commands.*;
 import me.tharle.myFirstPlugin.listenners.DeadListenner;
 import me.tharle.myFirstPlugin.listenners.ShearListenner;
+import me.tharle.myFirstPlugin.listenners.SpawnListeners;
 import org.bukkit.ChatColor;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.Command;
@@ -24,27 +22,28 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
     public void onEnable() {
         getLogger().info("ON ENABLE CUSTOM PLUGIN");
 
+        //config yml
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+
         // Register all events
         getServer().getPluginManager().registerEvents(this, this);
         getServer().getPluginManager().registerEvents(new ShearListenner(), this);
         getServer().getPluginManager().registerEvents(new DeadListenner(), this);
+        getServer().getPluginManager().registerEvents(new SpawnListeners(), this);
 
         // Register all commands
         getCommand("god").setExecutor(new GodCommand());
         getCommand("feed").setExecutor(new FeedCommand());
         getCommand("hungry").setExecutor(new HungryCommand());
         getCommand("Kill").setExecutor(new KillCommand());
+        getCommand("setspawn").setExecutor(new SetSpawnCommand());
+        getCommand("spawn").setExecutor(new SpawnCommand());
     }
 
     @Override
     public void onDisable() {
         getLogger().info("ON DISABLE CUSTOM PLUGIN");
-    }
-
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
-        getLogger().info("The player ["+event.getPlayer().getName()+"] has join to the server!!! <3" );
-        event.setJoinMessage("Welcome to the server "+event.getPlayer().getName()+"! Get a chair and relax!");
     }
 
     @EventHandler

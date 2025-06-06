@@ -21,6 +21,12 @@ commands:
   hungry:
     description: let the player a little more hungry
     usage: /<command>
+  setspawn:
+    description: set your spawn
+    usage: /<command>
+  spawn:
+    description: teleport you to the spawn (you need to set the spawn place with /setspawn before)
+    usage: /<command>
   kill:
     description: kill some player by name
     usage: /<command> <arg>

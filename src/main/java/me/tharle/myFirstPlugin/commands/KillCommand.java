@@ -43,7 +43,7 @@ public class KillCommand implements CommandExecutor {
                 playerTarget.sendMessage(
                         "The " +ChatColor.YELLOW + commandSender.getName() +
                                 ChatColor.WHITE + " kill the player "+
-                                ChatColor.DARK_AQUA + playerName +"!!!");
+                                ChatColor.DARK_AQUA + playerName +"!!! YEEEAAHH");
             }
         }.runTaskLater(plugin, 60L);
 
