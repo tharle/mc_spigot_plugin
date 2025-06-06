@@ -1,4 +1,4 @@
-package me.tharle.myFirstPlugin;
+package me.tharle.myFirstPlugin.listenners;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
