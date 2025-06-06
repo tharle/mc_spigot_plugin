@@ -18,8 +18,12 @@ commands:
   feed:
     description: Feed the player
     usage: /<command>
+    permission: permissions.feed
+    permission-message: You dont have permission to run the command /feed.
   hungry:
     description: let the player a little more hungry
+    permission: permissions.hungry
+    permission-message: You dont have permission to run the command /hungry.
     usage: /<command>
   setspawn:
     description: set your spawn
@@ -30,3 +34,9 @@ commands:
   kill:
     description: kill some player by name
     usage: /<command> <arg>
+permissions:
+  permissions.feed:
+    description: Allows someone to run the /feed command.
+    default: op
+    children:
+      permissions.hungry: true

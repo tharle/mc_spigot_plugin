@@ -30,6 +30,10 @@ public class FeedCommand implements CommandExecutor {
             } else {
                 commandSender.sendMessage(ChatColor.BLUE + "You don't need more food. You are a really full!!");
             }
+
+            // Test permission
+            if(player.hasPermission("permissions.feed")) player.sendMessage("GREAT, you have the permission to feed youself.");
+
         }else {
             commandSender.sendMessage(ChatColor.RED + ""+ ChatColor.ITALIC + "You need a player for this command.");
         }
