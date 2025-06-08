@@ -1,6 +1,6 @@
 package me.tharle.myFirstPlugin.commands;
 
-import org.bukkit.ChatColor;
+import static org.bukkit.ChatColor.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,12 +15,12 @@ public class GodCommand implements CommandExecutor {
             player.setInvulnerable(!player.isInvulnerable());
 
             player.sendMessage(
-                    (player.isInvulnerable()? ChatColor.GREEN : ChatColor.RED)
+                    (player.isInvulnerable()? GREEN : RED)
                     + "God mode "
                     + (player.isInvulnerable()? "enabled" : "disabled"));
 
         } else {
-            commandSender.sendMessage(ChatColor.RED + ""+ ChatColor.ITALIC + "You need a player for this command.");
+            commandSender.sendMessage(RED + ""+ ITALIC + "You need a player for this command.");
         }
 
 

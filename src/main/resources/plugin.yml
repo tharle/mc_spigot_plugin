@@ -34,6 +34,9 @@ commands:
   kill:
     description: kill some player by name
     usage: /<command> <arg>
+  menu:
+    description: give to you a item at slot 2 of hotbar
+    usage: /<command>
 permissions:
   permissions.feed:
     description: Allows someone to run the /feed command.

@@ -2,6 +2,7 @@ package me.tharle.myFirstPlugin;
 
 import me.tharle.myFirstPlugin.commands.*;
 import me.tharle.myFirstPlugin.listenners.DeadListenner;
+import me.tharle.myFirstPlugin.listenners.InventoryListenner;
 import me.tharle.myFirstPlugin.listenners.ShearListenner;
 import me.tharle.myFirstPlugin.listenners.SpawnListeners;
 import org.bukkit.ChatColor;
@@ -23,7 +24,9 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
         getLogger().info("ON ENABLE CUSTOM PLUGIN");
 
         //config yml
-        getConfig().options().copyDefaults();
+        getConfig()
+            .options()
+            .copyDefaults();
         saveDefaultConfig();
 
         // Register all events
@@ -31,6 +34,7 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new ShearListenner(), this);
         getServer().getPluginManager().registerEvents(new DeadListenner(), this);
         getServer().getPluginManager().registerEvents(new SpawnListeners(), this);
+        getServer().getPluginManager().registerEvents(new InventoryListenner(), this);
 
         // Register all commands
         getCommand("god").setExecutor(new GodCommand());
@@ -39,6 +43,7 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
         getCommand("Kill").setExecutor(new KillCommand());
         getCommand("setspawn").setExecutor(new SetSpawnCommand());
         getCommand("spawn").setExecutor(new SpawnCommand());
+        getCommand("menu").setExecutor(new MenuCommand());
     }
 
     @Override
@@ -56,16 +61,23 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         // /die kill the player
 
+        // condition
+        // data
+        // action
+        // feedback
+
         if(command.getName().equalsIgnoreCase("die")) {
+            if(sender instanceof ConsoleCommandSender){
+                getLogger().info("Command send for CONSOLE commander sender");
+            }
+            if(sender instanceof BlockCommandSender){
+                getLogger().info("Command send for BLOCK commander sender");
+            }
             if(sender instanceof Player player){
                 player.setHealth(0);
                 player.sendMessage(ChatColor.RED + "" + ChatColor.ITALIC + "You have opted to die!!");
 
                 return true;
-            } else if(sender instanceof ConsoleCommandSender){
-                getLogger().info("Command send for CONSOLE commander sender");
-            } else if(sender instanceof BlockCommandSender){
-                getLogger().info("Command send for BLOCK commander sender");
             }
         }
 
