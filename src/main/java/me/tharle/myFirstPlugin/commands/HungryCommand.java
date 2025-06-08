@@ -29,7 +29,7 @@ public class HungryCommand implements CommandExecutor {
                 commandSender.sendMessage(ChatColor.BLUE + "I'm starving. I need food!!!!");
             }
         }else {
-            commandSender.sendMessage(ChatColor.RED + ""+ ChatColor.ITALIC + "You need a player for this command.");
+            commandSender.sendMessage(ChatColor.RED + ""+ ChatColor.ITALIC + "You need be a player for this command.");
         }
 
         return true;

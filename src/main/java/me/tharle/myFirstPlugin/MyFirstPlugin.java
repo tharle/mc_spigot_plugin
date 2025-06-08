@@ -1,10 +1,7 @@
 package me.tharle.myFirstPlugin;
 
 import me.tharle.myFirstPlugin.commands.*;
-import me.tharle.myFirstPlugin.listenners.DeadListenner;
-import me.tharle.myFirstPlugin.listenners.InventoryListenner;
-import me.tharle.myFirstPlugin.listenners.ShearListenner;
-import me.tharle.myFirstPlugin.listenners.SpawnListeners;
+import me.tharle.myFirstPlugin.listenners.*;
 import org.bukkit.ChatColor;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.Command;
@@ -14,7 +11,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedLeaveEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MyFirstPlugin extends JavaPlugin implements Listener {
@@ -35,6 +31,7 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new DeadListenner(), this);
         getServer().getPluginManager().registerEvents(new SpawnListeners(), this);
         getServer().getPluginManager().registerEvents(new InventoryListenner(), this);
+        getServer().getPluginManager().registerEvents(new MenuListenner(), this);
 
         // Register all commands
         getCommand("god").setExecutor(new GodCommand());
@@ -43,6 +40,7 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
         getCommand("Kill").setExecutor(new KillCommand());
         getCommand("setspawn").setExecutor(new SetSpawnCommand());
         getCommand("spawn").setExecutor(new SpawnCommand());
+        getCommand("gift").setExecutor(new GiftCommand());
         getCommand("menu").setExecutor(new MenuCommand());
     }
 

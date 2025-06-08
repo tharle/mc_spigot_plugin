@@ -34,8 +34,11 @@ commands:
   kill:
     description: kill some player by name
     usage: /<command> <arg>
+  gift:
+    description: give to you a item or two.
+    usage: /<command>
   menu:
-    description: give to you a item at slot 2 of hotbar
+    description: Open to you a custom inventory to find some nice itens
     usage: /<command>
 permissions:
   permissions.feed:
