@@ -32,6 +32,7 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new SpawnListeners(), this);
         getServer().getPluginManager().registerEvents(new InventoryListenner(), this);
         getServer().getPluginManager().registerEvents(new MenuListenner(), this);
+        getServer().getPluginManager().registerEvents(new MoveListener(), this);
 
         // Register all commands
         getCommand("god").setExecutor(new GodCommand());
@@ -42,6 +43,7 @@ public final class MyFirstPlugin extends JavaPlugin implements Listener {
         getCommand("spawn").setExecutor(new SpawnCommand());
         getCommand("gift").setExecutor(new GiftCommand());
         getCommand("menu").setExecutor(new MenuCommand());
+        getCommand("summmon").setExecutor(new SummonCommand());
     }
 
     @Override

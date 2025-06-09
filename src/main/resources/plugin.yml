@@ -40,6 +40,9 @@ commands:
   menu:
     description: Open to you a custom inventory to find some nice itens
     usage: /<command>
+  summmon:
+    description:  to summon some cool stuffs
+    usage: /<command> <arg>
 permissions:
   permissions.feed:
     description: Allows someone to run the /feed command.
